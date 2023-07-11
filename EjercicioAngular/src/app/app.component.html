@@ -1,0 +1,18 @@
+<div *ngIf="this.buttonStatus">
+  <table class="table">
+    <tr class="table-header">
+      <th class="header-item">Nombre</th>
+      <th class="header-item">Costo</th>
+    </tr>
+    <tr *ngFor="let product of productList" class="table-row">
+      <td class="table-data">{{product.nombre}}</td>
+      <td class="table-data">{{product.costo}}</td>
+    </tr>
+  </table>
+  </div>
+<div class="example-button-row" *ngIf="this.buttonStatus == false">
+  <button mat-raised-button class="button" (click)="changeStatus()">Mostrar</button>
+</div>
+<div class="example-button-row" *ngIf="this.buttonStatus">
+  <button mat-raised-button class="button" (click)="changeStatus()">Ocultar</button>
+</div>
